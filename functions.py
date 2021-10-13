@@ -35,12 +35,12 @@ import math
 
 def divisors_count(x):
     counts = 0
-    for i in range (1, (int)(math.sqrt(x)) + 1):
-        fdiv = x / i
-        idiv = x // i
-        isIntDivided = fdiv == idiv
-        if  isIntDivided:
-            if  idiv != i:
+    for i in range(1, int(math.sqrt(x)) + 1):
+
+        is_divided = x % i == 0
+        if is_divided:
+            idiv = x // i
+            if idiv != i:
                 counts += 2
             else:
                 counts += 1
